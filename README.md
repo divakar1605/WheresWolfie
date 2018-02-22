@@ -8,10 +8,10 @@
 
 * Run the node server ``` node index.js ``` from root directory
 
-# Tech Stack
-
-* Node, Google Maps API, JQuery
-
 # After running the app
 
 * Open any browser and visit ``` localhost:8080 ```
+
+# Tech Stack
+
+* Node, Google Maps API, JQuery
