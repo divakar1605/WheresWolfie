@@ -2,6 +2,8 @@
 
 **A geography based game aimed at teaching players locations of state capitals and major cities in the US**
 
+# Setup
+
 * Install node dependencies ``` npm install ```
 
 * Run the node server ``` node index.js ``` from root directory
