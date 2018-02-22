@@ -1,0 +1,402 @@
+[
+    {
+      "name": "albany",
+      "pos": {"lat": 42.656939, "lng": -73.757114}
+    },
+    {
+      "name": "albequerque",
+      "pos": {"lat": 35.106428, "lng": -106.626663}
+    },
+    {
+      "name": "alexandria",
+      "pos": {"lat": 38.808146, "lng":-77.046833}
+    },
+    {
+      "name": "anchorage",
+      "pos": {"lat": 61.251744, "lng":-149.909363}
+    },
+    {
+      "name": "aspen",
+      "pos": {"lat": 39.190622, "lng":-106.818037}
+    },
+    {
+      "name": "atlanta",
+      "pos": {"lat": 33.751748, "lng":-84.388847}
+    },
+    {
+      "name": "atlantic city",
+      "pos": {"lat": 39.365359, "lng": -74.423504}
+    },
+    {
+      "name": "austin",
+      "pos": {"lat": 30.264998, "lng": -97.744217}
+    },
+    {
+      "name": "baltimore",
+      "pos": {"lat": 39.292328, "lng": -76.613274}
+    },
+    {
+      "name": "binghamton",
+      "pos": {"lat": 42.098987, "lng": -75.918303}
+    },
+    {
+      "name": "boise",
+      "pos": {"lat": 43.618182, "lng": -116.21624}
+    },
+    {
+      "name": "boston",
+      "pos": {"lat": 42.358544, "lng": -71.060371}
+    },
+    {
+      "name": "buffalo",
+      "pos": {"lat": 42.88653, "lng": -78.880577}
+    },
+    {
+      "name": "burmingham",
+      "pos": {"lat": 33.527086, "lng": -86.80172}
+    },
+    {
+      "name": "chapel hill",
+      "pos": {"lat": 35.913245, "lng": -79.056644}
+    },
+    {
+      "name": "charleston",
+      "pos": {"lat": 32.776883, "lng": -79.934006}
+    },
+    {
+      "name": "charlotte",
+      "pos": {"lat": 35.227672, "lng": -80.844498}
+    },
+    {
+      "name": "chattanooga",
+      "pos": {"lat": 35.049111, "lng": -85.311813}
+    },
+    {
+      "name": "chicago",
+      "pos": {"lat": 41.878764, "lng": -87.632675}
+    },
+    {
+      "name": "cincinnati",
+      "pos": {"lat": 39.103956, "lng": -84.513817}
+    },
+    {
+      "name": "cleveland",
+      "pos": {"lat": 41.501378, "lng": -81.69651}
+    },
+    {
+      "name": "colombus",
+      "pos": {"lat": 39.966596, "lng": -83.001938}
+    },
+    {
+      "name": "colorado springs",
+      "pos": {"lat": 38.833289, "lng": -104.824905}
+    },
+    {
+      "name": "dallas",
+      "pos": {"lat": 32.783811, "lng": -96.802139}
+    },
+    {
+      "name": "dayton",
+      "pos": {"lat": 39.758936, "lng": -84.192467}
+    },
+    {
+      "name": "denver",
+      "pos": {"lat": 39.738874, "lng": -104.988327}
+    },
+    {
+      "name": "detroit",
+      "pos": {"lat": 42.331646, "lng": -83.047142}
+    },
+    {
+      "name": "eureka",
+      "pos": {"lat": 40.804454, "lng": -124.164448}
+    },
+    {
+      "name": "gallup",
+      "pos": {"lat": 35.527476, "lng": -108.743076}
+    },
+    {
+      "name": "glasgow",
+      "pos": {"lat": 36.99652, "lng": -85.912113}
+    },
+    {
+      "name": "green bay",
+      "pos": {"lat": 44.52001, "lng": -88.020515}
+    },
+    {
+      "name": "grenada",
+      "pos": {"lat": 41.644697, "lng": -122.522893}
+    },
+    {
+      "name": "havelock",
+      "pos": {"lat": 34.879735, "lng": -76.901608}
+    },
+    {
+      "name": "helena",
+      "pos": {"lat": 46.59827, "lng": -112.026958}
+    },
+    {
+      "name": "honolulu",
+      "pos": {"lat": 21.309206, "lng": -157.858543}
+    },
+    {
+      "name": "houston",
+      "pos": {"lat": 29.761993, "lng": -95.372772}
+    },
+    {
+      "name": "indianapolis",
+      "pos": {"lat": 39.773714, "lng": -86.160507}
+    },
+    {
+      "name": "jacksonville",
+      "pos": {"lat": 30.337324, "lng": -81.660233}
+    },
+    {
+      "name": "jersey city",
+      "pos": {"lat": 40.728527, "lng": -74.078465}
+    },
+    {
+      "name": "juneau",
+      "pos": {"lat": 58.332567, "lng": -134.413147}
+    },
+    {
+      "name": "kansas city",
+      "pos": {"lat": 39.113546, "lng": -94.627419}
+    },
+    {
+      "name": "knoxville",
+      "pos": {"lat": 35.962446, "lng": -83.921928}
+    },
+    {
+      "name": "lafayette",
+      "pos": {"lat": 40.416633, "lng": -86.875134}
+    },
+    {
+      "name": "laguna beach",
+      "pos": {"lat": 33.542825, "lng": -117.785168}
+    },
+    {
+      "name": "las cruces",
+      "pos": {"lat": 32.330078, "lng": -106.764565}
+    },
+    {
+      "name": "las vegas",
+      "pos": {"lat": 36.1168, "lng": -115.178146}
+    },
+    {
+      "name": "lawrence",
+      "pos": {"lat": 38.972489, "lng": -95.236073}
+    },
+    {
+      "name": "lexington",
+      "pos": {"lat": 42.442968, "lng": -71.228886}
+    },
+    {
+      "name": "los angeles",
+      "pos": {"lat": 34.057211, "lng": -118.249054}
+    },
+    {
+      "name": "macon",
+      "pos": {"lat": 32.840943, "lng": -83.632107}
+    },
+    {
+      "name": "medford",
+      "pos": {"lat": 39.902889, "lng": -74.825249}
+    },
+    {
+      "name": "memphis",
+      "pos": {"lat": 35.147986, "lng": -90.052414}
+    },
+    {
+      "name": "miami",
+      "pos": {"lat": 25.788763, "lng": -80.226688}
+    },
+    {
+      "name": "milwaukee",
+      "pos": {"lat": 43.042798, "lng": -87.908707}
+    },
+    {
+      "name": "minneapolis",
+      "pos": {"lat": 44.985199, "lng": -93.265114}
+    },
+    {
+      "name": "montgomery",
+      "pos": {"lat": 44.43856, "lng": -93.581386}
+    },
+    {
+      "name": "myrtle beach",
+      "pos": {"lat": 33.690638, "lng": -78.885384}
+    },
+    {
+      "name": "napa",
+      "pos": {"lat": 38.29802, "lng": -122.287159}
+    },
+    {
+      "name": "nashville",
+      "pos": {"lat": 36.17114, "lng": -86.785355}
+    },
+    {
+      "name": "new haven",
+      "pos": {"lat": 41.308761, "lng": -72.928677}
+    },
+    {
+      "name": "new orleans",
+      "pos": {"lat": 29.956124, "lng": -90.074387}
+    },
+    {
+      "name": "new york",
+      "pos": {"lat": 40.714997, "lng": -74.009628}
+    },
+    {
+      "name": "newark",
+      "pos": {"lat": 40.735551, "lng": -74.172192}
+    },
+    {
+      "name": "omaha",
+      "pos": {"lat": 41.254065, "lng": -95.999336}
+    },
+    {
+      "name": "orlando",
+      "pos": {"lat": 28.544719, "lng": -81.382828}
+    },
+    {
+      "name": "philadelphia",
+      "pos": {"lat": 39.962386, "lng": -75.165939}
+    },
+    {
+      "name": "phoenix",
+      "pos": {"lat": 33.465817, "lng": -112.074738}
+    },
+    {
+      "name": "pittsburgh",
+      "pos": {"lat": 40.442767, "lng": -79.995003}
+    },
+    {
+      "name": "portland",
+      "pos": {"lat": 45.526074, "lng": -122.676888}
+    },
+    {
+      "name": "providence",
+      "pos": {"lat": 41.824549, "lng": -71.41325}
+    },
+    {
+      "name": "raleigh",
+      "pos": {"lat": 35.788855, "lng": -78.641739}
+    },
+    {
+      "name": "reno",
+      "pos": {"lat": 39.533703, "lng": -119.814377}
+    },
+    {
+      "name": "richmond",
+      "pos": {"lat": 37.5424, "lng": -77.437248}
+    },
+    {
+      "name": "rochester",
+      "pos": {"lat": 43.16362, "lng": -77.61097}
+    },
+    {
+      "name": "rockville",
+      "pos": {"lat": 39.085704, "lng": -77.152376}
+    },
+    {
+      "name": "sacramento",
+      "pos": {"lat": 38.58682, "lng": -121.495857}
+    },
+    {
+      "name": "salt lake city",
+      "pos": {"lat": 40.763381, "lng": -111.892433}
+    },
+    {
+      "name": "san antonio",
+      "pos": {"lat": 29.430029, "lng": -98.49678}
+    },
+    {
+      "name": "san diego",
+      "pos": {"lat": 32.722599, "lng": -117.161408}
+    },
+    {
+      "name": "san francisco",
+      "pos": {"lat": 37.782112, "lng": -122.421455}
+    },
+    {
+      "name": "san jose",
+      "pos": {"lat": 37.343959, "lng": -121.896286}
+    },
+    {
+      "name": "santa ana",
+      "pos": {"lat": 33.748037, "lng": -117.867565}
+    },
+    {
+      "name": "santa cruz",
+      "pos": {"lat": 36.975541, "lng": -122.03084}
+    },
+    {
+      "name": "santa fe",
+      "pos": {"lat": 35.689649, "lng": -105.937786}
+    },
+    {
+      "name": "santa rosa",
+      "pos": {"lat": 38.442833, "lng": -122.715282}
+    },
+    {
+      "name": "seattle",
+      "pos": {"lat": 47.609867, "lng": -122.332191}
+    },
+    {
+      "name": "smithfield",
+      "pos": {"lat": 35.509872, "lng": -78.339443}
+    },
+    {
+      "name": "springfield",
+      "pos": {"lat": 39.929748, "lng": -83.808918}
+    },
+    {
+      "name": "st louis",
+      "pos": {"lat": 43.409038, "lng": -84.606757}
+    },
+    {
+      "name": "st petersburg",
+      "pos": {"lat": 27.775912, "lng": -82.639961}
+    },
+    {
+      "name": "stanford",
+      "pos": {"lat": 37.424639, "lng": -122.166009}
+    },
+    {
+      "name": "stony brook",
+      "pos": {"lat": 40.92804, "lng": -73.14188}
+    },
+    {
+      "name": "syracuse",
+      "pos": {"lat": 43.049322, "lng": -76.147327}
+    },
+    {
+      "name": "tampa",
+      "pos": {"lat": 27.961656, "lng": -82.456741}
+    },
+    {
+      "name": "topeka",
+      "pos": {"lat": 39.060783, "lng": -95.689659}
+    },
+    {
+      "name": "tucson",
+      "pos": {"lat": 32.230228, "lng": -110.926437}
+    },
+    {
+      "name": "warwick",
+      "pos": {"lat": 41.702909, "lng": -71.416683}
+    },
+    {
+      "name": "washington dc",
+      "pos": {"lat": 38.914544, "lng": -77.036247}
+    },
+    {
+      "name": "west chester",
+      "pos": {"lat": 39.961399, "lng": -75.605779}
+    },
+    {
+      "name": "wichita",
+      "pos": {"lat": 37.695774, "lng": -97.336235}
+    }
+]

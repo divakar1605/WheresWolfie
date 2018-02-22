@@ -1,0 +1,10 @@
+{
+  "name": "cityListCreator",
+  "version": "1.0.0",
+  "description": "Create city list for Where's Wolfie game as a JSON file using txt file as imput",
+  "main": "createCityList.js",
+  "author": "Divakar Saxena",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}

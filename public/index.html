@@ -1,0 +1,57 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Where's Wolfie (USA Edition)?</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- Custom files to include -->
+        <link rel="stylesheet" type="text/css" href="./css/wheres-wolfie.css" />
+        <script src="./js/wheres-wolfie.js"></script>
+
+        <!-- External libraries to include -->
+        <script src='//code.jquery.com/jquery-1.7.2.min.js'></script>
+        <script>
+            var apiKey = "<PASTE YOUR KEY HERE>";
+        </script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=" + apiKey + "&sensor=false"></script>
+        <script>
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+    </head>
+    <body>
+      <div id = "game">
+
+        <div id="banner">Where's Wolfie (USA Edition) ?<br />
+        </div>
+
+        <div id = "player">
+          <span id = "name">
+            Name: <input type="text" id="playerName" name="playerName" required>
+          </span>
+          <span id = "guess">
+            Map Guess: <input type="text" id="playerGuess" name="guess" required>
+            <input id = "submitBtn" type="submit"  name="Send Player Data" value="Send Guess" onclick="sendData()">
+          </span>
+        </div>
+
+        <div id="theMap"></div>
+
+        <div id="scores">
+        </div>
+
+        <div class="author">by Divakar Saxena</div>
+
+        <script src='/socket.io/socket.io.js'></script>
+        <script>
+          var socket = io();
+          addEventListeners();
+          initConnection(socket);
+        </script>
+      </div>
+    </body>
+</html>

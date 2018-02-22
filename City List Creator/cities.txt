@@ -1,0 +1,151 @@
+STATE: Alabama
+Montgomery
+Birmingham
+STATE: Alaska
+Juneau
+Anchorage
+STATE: Arizona
+Phoenix
+Tucson
+STATE: Arkansas
+Little Rock
+STATE: California
+Sacramento
+San Francisco
+Los Angeles
+San Diego
+San Jose
+STATE: Colorado
+Denver
+Colorado Springs
+STATE: Connecticut
+Hartford
+Bridgeport
+STATE: Delaware
+Dover
+Wilmington
+STATE: Florida
+Tallahassee
+Jacksonville
+Miami
+STATE: Georgia
+Atlanta
+STATE: Hawaii
+Honolulu
+STATE: Idaho
+Boise
+STATE: Illinois
+Springfield
+Chicago
+STATE: Indiana
+Indianapolis
+Fort Wayne
+STATE: Iowa
+Des Moines
+STATE: Kansas
+Topeka
+Wichita
+STATE: Kentucky
+Frankfort
+Louisville
+STATE: Louisiana
+Baton Rouge
+New Orleans
+STATE: Maine
+Augusta
+STATE: Maryland
+Annapolis
+Baltimore
+STATE: Massachusetts
+Boston
+STATE: Michigan
+Lansing
+Detroit
+STATE: Minnesota
+Saint Paul
+Minneapolis
+STATE: Mississippi
+Jackson
+STATE: Missouri
+Jefferson City
+Kansas City
+STATE: Montana
+Helena
+Billings
+STATE: Nebraska
+Lincoln
+Omaha
+STATE: Nevada
+Carson City
+Las Vegas
+STATE: New Hampshire
+Concord
+Manchester
+STATE: New Jersey
+Trenton
+Newark
+STATE: New Mexico
+Santa Fe
+Albuquerque
+STATE: New York
+Albany
+New York City
+Stony Brook
+STATE: North Carolina
+Raleigh
+Charlotte
+STATE: North Dakota
+Bismarck
+Fargo
+STATE: Ohio
+Columbus
+Cincinnati
+Cleveland
+STATE: Oklahoma
+Oklahoma City
+Tulsa
+STATE: Oregon
+Salem
+Portland
+STATE: Pennsylvania
+Harrisburg
+Philadelphia
+Pittsburgh
+STATE: Rhode Island
+Providence
+STATE: South Carolina
+Columbia
+Charleston
+STATE: South Dakota
+Pierre
+Sioux Falls
+STATE: Tennessee
+Nashville
+Memphis
+STATE: Texas
+Austin
+Houston
+Dallas
+San Antonio
+Fort Worth
+STATE: Utah
+Salt Lake City
+STATE: Vermont
+Montpelier
+Burlington
+STATE: Virginia
+Richmond
+Virginia Beach
+STATE: Washington
+Olympia
+Seattle
+STATE: West Virginia
+Charleston
+Huntington
+STATE: Wisconsin
+Madison
+Milwaukee
+STATE: Wyoming
+Cheyenne
+STATE: DC
+Washington
