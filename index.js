@@ -64,7 +64,7 @@ io.on('connection', function(socket){
       players[playerIdx].score++;
 
       // broadcast to everyone else that a player has won
-      socket.broadcast.emit('game over', { 'winnerName' : data.name, 'secretCity' : secretCity.name });
+      socket.broadcast.emit('game over', { 'winnerName' : data.name, 'secretCity' : secretCity });
 
       // send the win message to the winning player only
       socket.emit('win', {'playerName': data.name, 'pos': secretCity.pos});

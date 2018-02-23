@@ -3,12 +3,12 @@ var mapMarkers = [];
 var players = [];
 
 var messages = {
-  'start' : 'Wolfie has gone missing!! \n\nCan you help find him?',
+  'start' : 'Wolfie has gone missing!! <br /><br />Can you help find him?',
   'win' : 'YOU WIN!!',
-  'gameOver' : ' has found Wolfie!\n\n Wolfie was hidden in ',
+  'gameOver' : ' has found Wolfie! <br /><br /> Wolfie was hidden in ',
   'clear' : 'Clearing out the map for a new game now!',
   'reset' : 'Next round will begin shortly...',
-  'invalid' : ' is not listed in our game!\n\nPlease try another city'
+  'invalid' : ' is not listed in our game!<br /><br />Please try another city'
 };
 
 //$('#playerScores').append('<tr><td>' + data.nameScore + '</td><td id=' + data.nameScore + '>' + 0 + '</td></tr>');
@@ -26,12 +26,12 @@ function initialize() {
 function addEventListeners() {
   var input = document.getElementById("playerGuess");
 
-input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    sendData();
-  }
-});
+  input.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      sendData();
+    }
+  });
 }
 
 
@@ -57,12 +57,12 @@ function initConnection(socket) {
 
   socket.on('start', function(){
     enableSubmitBtn();
-    alert(messages.start);//TBD - \n\nHe is in one of the cities listed on the sides')
+    sendNotification(messages.start, 4000);//TBD - \n\nHe is in one of the cities listed on the sides')
   });
 
   socket.on('resetting', function(){
     disableSubmitBtn();
-    alert(messages.reset);
+    sendNotification(messages.reset, 4000);
   });
 
   socket.on('guess response', function(data) {
@@ -70,11 +70,14 @@ function initConnection(socket) {
   });
 
   socket.on('invalid', function(data){
-    alert(data + messages.invalid);
+    sendNotification(data + messages.invalid, 4000);
   });
 
   socket.on('game over', function(data) {
-    alert(data.winnerName + messages.gameOver + data.secretCity.toUpperCase());
+    sendNotification(data.winnerName + messages.gameOver + data.secretCity.name.toUpperCase(), 4000);
+
+    // show the location where wolfie was hidden
+    placeMarker(data.secretCity.pos, 0, true);
 
     let winnerIdx = getPlayerIndex(data.winnerName);
     updateWinnerPosition(winnerIdx);
@@ -91,13 +94,9 @@ function initConnection(socket) {
   socket.on('win', function(data) {
     let winnerIdx = getPlayerIndex(data.playerName);
     updateWinnerPosition(winnerIdx);
-
     updateScoreBoard();
-
-
     placeMarker(data.pos, 0, true);
-
-    alert(messages.win);
+    sendNotification(messages.win, 4000);
     handleRoundEnd();
   });
 
@@ -172,10 +171,10 @@ function findNewPosition(score) {
 function handleRoundEnd() {
   disableSubmitBtn();
   setTimeout(function() {
-      alert(messages.reset);
+      sendNotification(messages.reset, 4000);
   }, 5000);
   setTimeout(function() {
-      alert(messages.clear);
+      sendNotification(messages.clear, 4000);
       clearAllMarkers();
   }, 10000);
 }
@@ -217,4 +216,13 @@ function createScoreBoard() {
 
 function addPlayerToScoreBoard(player) {
   $('#playerScores').append('<tr><td>' + player.name + '</td><td>' + player.score + '</td></tr>');
+}
+
+function sendNotification(message, time) {
+  var notificationBar = $('#notifications');
+  notificationBar.addClass('show');
+  notificationBar.html(message);
+  setTimeout(function(){
+    notificationBar.removeClass('show');
+  }, time);
 }

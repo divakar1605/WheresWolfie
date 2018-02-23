@@ -24,7 +24,9 @@ and open the template in the editor.
 
     </head>
     <body>
-      <div id = "game">
+      <div id = "notifications" class = "centerScreen"></div>
+
+      <div id = "game" class = "centerScreen">
 
         <div id="banner">Where's Wolfie (USA Edition) ?<br />
         </div>
@@ -46,12 +48,14 @@ and open the template in the editor.
 
         <div class="author">by Divakar Saxena</div>
 
-        <script src='/socket.io/socket.io.js'></script>
-        <script>
-          var socket = io();
-          addEventListeners();
-          initConnection(socket);
-        </script>
+
       </div>
+
+      <script src='/socket.io/socket.io.js'></script>
+      <script>
+        var socket = io();
+        addEventListeners();
+        initConnection(socket);
+      </script>
     </body>
 </html>
