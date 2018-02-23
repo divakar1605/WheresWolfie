@@ -6,27 +6,29 @@
         Purpose of the stylesheet follows.
 */
 
-root {
-    display: block;
-}
-
 body
 {
     background-color:rgb(118,143,165);
     font-family:"Arial";
-    position:absolute;
-    margin-left: 10px;
     text-align:left;
-    margin-top: 10px;
+    height: 100vh;
+    width : 100vw;
+}
+
+.inline
+{
+  display: inline-block;
 }
 
 .centerScreen
 {
-  position: fixed;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
 
 #notifications {
     visibility: hidden;
@@ -118,10 +120,13 @@ input[type = text]
 {
     width:1080px;
     border: 5px solid black;
+    text-align: center;
 }
+
 
 th
 {
+  text-align: center;
   color : ghostwhite;
   border: 2px solid black;
   background-color: rgb(153, 0, 0);
@@ -130,6 +135,32 @@ th
 td
 {
   border: 2px solid black;
+}
+
+.cityTable
+{
+  font-size: 13px;
+  border: 5px solid black;
+}
+
+.cityList
+{
+  border-collapse: collapse;
+}
+
+.cityList td:nth-child(even)
+{
+  border-left: 0px
+}
+
+.cityList td:nth-child(odd)
+{
+  border-right: 0px;
+}
+
+.cityList tr
+{
+  height: 22px;
 }
 
 tr:nth-child(odd)

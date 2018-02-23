@@ -26,29 +26,26 @@ and open the template in the editor.
     <body>
       <div id = "notifications" class = "centerScreen"></div>
 
-      <div id = "game" class = "centerScreen">
+      <div class = "centerScreen inline">
+        <div id = "capitals" name = "State Capitals" class = "inline cityTable"></div>
+        <div id = "game" class = "inline">
+          <div id="banner">Where's Wolfie (USA Edition) ?<br /></div>
 
-        <div id="banner">Where's Wolfie (USA Edition) ?<br />
+          <div id = "player">
+            <span id = "name">
+              Name: <input type="text" id="playerName" name="playerName" required>
+            </span>
+            <span id = "guess">
+              Map Guess: <input type="text" id="playerGuess" name="guess" required>
+              <input id = "submitBtn" type="submit"  name="Send Player Data" value="Send Guess" onclick="sendData()">
+            </span>
+          </div>
+
+          <div id="theMap"></div>
+          <div id="scores"></div>
+          <div class="author">by Divakar Saxena</div>
         </div>
-
-        <div id = "player">
-          <span id = "name">
-            Name: <input type="text" id="playerName" name="playerName" required>
-          </span>
-          <span id = "guess">
-            Map Guess: <input type="text" id="playerGuess" name="guess" required>
-            <input id = "submitBtn" type="submit"  name="Send Player Data" value="Send Guess" onclick="sendData()">
-          </span>
-        </div>
-
-        <div id="theMap"></div>
-
-        <div id="scores">
-        </div>
-
-        <div class="author">by Divakar Saxena</div>
-
-
+        <div id = "majorCities" name = "Major Cities" class = "inline cityTable"></div>
       </div>
 
       <script src='/socket.io/socket.io.js'></script>

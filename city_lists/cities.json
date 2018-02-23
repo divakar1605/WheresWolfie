@@ -399,7 +399,9 @@
                 "lng": -104.8202462
             },
             "state": "Wyoming"
-        },
+        }
+    ],
+    "majorCities": [
         {
             "name": "Washington",
             "pos": {
@@ -407,9 +409,7 @@
                 "lng": -77.0368707
             },
             "state": "DC"
-        }
-    ],
-    "majorCities": [
+        },
         {
             "name": "Birmingham",
             "pos": {

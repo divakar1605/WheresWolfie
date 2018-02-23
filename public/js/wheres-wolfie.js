@@ -1,6 +1,8 @@
 var map;
+var mapDefaults = [];
 var mapMarkers = [];
 var players = [];
+var cities = [];
 
 var messages = {
   'start' : 'Wolfie has gone missing!! <br /><br />Can you help find him?',
@@ -10,8 +12,6 @@ var messages = {
   'reset' : 'Next round will begin shortly...',
   'invalid' : ' is not listed in our game!<br /><br />Please try another city'
 };
-
-//$('#playerScores').append('<tr><td>' + data.nameScore + '</td><td id=' + data.nameScore + '>' + 0 + '</td></tr>');
 
 function initialize() {
     var mapProp = {
@@ -39,18 +39,24 @@ function initConnection(socket) {
 
   socket.on('setup', function(data) {
     // create city list tables
-    //TO DO
+    cities = data.cities;
+    let capitalTable = $('#capitals');
+    let majorCitiesTable = $('#majorCities');
+
+    createTable(capitalTable, cities.capitals);
+    createTable(majorCitiesTable, cities.majorCities);
 
     clearInputFields(true, true);
 
-    players = data;
-    console.log(players);
-    players.sort(function(a, b){
-      return b.score - a.score;
-    });
+    players = data.players;
+    if(players != undefined) {
+      players.sort(function(a, b){
+        return b.score - a.score;
+      });
+    }
 
     //add score table if players exist
-    if(players.length > 0) {
+    if(players != undefined && players.length > 0) {
       updateScoreBoard();
     }
   });
@@ -225,4 +231,20 @@ function sendNotification(message, time) {
   setTimeout(function(){
     notificationBar.removeClass('show');
   }, time);
+}
+
+function createTable(element, data) {
+  element.append('<table id =' + element.attr('id') + 'Table class = "cityList"><tr><th colspan = "4">' + element.attr('name') + '</th></tr></table>')
+  let table = $('#' + element.attr('id') + 'Table');
+  table.append('<tr><th>' + 'State' + '</th><th>' + 'City' + '</th><th>' + 'State' + '</th><th>' + 'City' + '</th></tr>')
+
+  for(let i=0; i<data.length; i+=2) {
+    let city1 = data[i];
+    let city2 = data[i+1];
+    addCityToTable(table, city1, city2);
+  };
+}
+
+function addCityToTable(table, city1, city2) {
+  table.append('<tr><td>' + city1.state + '</td><td>' + city1.name + '</td></button><td>' + city2.state + '</td><td>' + city2.name + '</td></tr>');
 }

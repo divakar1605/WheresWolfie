@@ -10,6 +10,7 @@ var connectedPlayerCount = 0;
 var cities = require('./city_lists/cities.json');
 var allCities = cities.capitals.concat(cities.majorCities);
 var secretCity;
+
 var gameState = Object.freeze({
   'RUNNING' : 1,
   'STARTING' : 2,
@@ -34,7 +35,7 @@ io.on('connection', function(socket){
   console.log('a user connected');
   connectedPlayerCount++;
 
-  socket.emit('setup', players);
+  socket.emit('setup', { 'players' : players, 'cities' : cities });
 
   switch (currentState) {
     case gameState.STARTING :
