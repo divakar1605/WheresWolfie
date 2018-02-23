@@ -3,6 +3,9 @@ var mapDefaults = [];
 var mapMarkers = [];
 var players = [];
 var cities = [];
+var currentGuesses = [];
+
+var canSubmit = true;
 
 var messages = {
   'start' : 'Wolfie has gone missing!! <br /><br />Can you help find him?',
@@ -29,7 +32,7 @@ function addEventListeners() {
   input.addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
-      sendData();
+      sendData(true);
     }
   });
 }
@@ -71,7 +74,11 @@ function initConnection(socket) {
     sendNotification(messages.reset, 4000);
   });
 
+  // normal guess response, DID NOT WIN
   socket.on('guess response', function(data) {
+
+    setTableListColor(data.name, true, false);
+
     placeMarker(data.position, data.distance, false);
   });
 
@@ -97,25 +104,35 @@ function initConnection(socket) {
     players.push({'name': data, 'score': 0});
   });
 
+  // special guess response, YOU WON!
   socket.on('win', function(data) {
     let winnerIdx = getPlayerIndex(data.playerName);
     updateWinnerPosition(winnerIdx);
     updateScoreBoard();
+
     placeMarker(data.pos, 0, true);
+    setTableListColor(data.cityName, true, true);
+
     sendNotification(messages.win, 4000);
     handleRoundEnd();
   });
 
 }
 
-function sendData() {
-    var playerName = document.getElementById("playerName").value;
-    var playerGuess = document.getElementById("playerGuess").value;
-    playerGuess = playerGuess.toLowerCase();
+function sendData(clearGuess) {
+  if(canSubmit == false)
+    return;
 
-    clearInputFields(false, true);
+  var playerName = document.getElementById("playerName").value;
+  var playerGuess = document.getElementById("playerGuess").value;
 
-    socket.emit('makeGuess', {name: playerName, guess: playerGuess});
+  currentGuesses.push(playerGuess);
+
+  playerGuess = playerGuess.toLowerCase();
+
+  clearInputFields(false, clearGuess);
+
+  socket.emit('makeGuess', {name: playerName, guess: playerGuess});
 }
 
 function placeMarker(position, distance, win) {
@@ -182,14 +199,18 @@ function handleRoundEnd() {
   setTimeout(function() {
       sendNotification(messages.clear, 4000);
       clearAllMarkers();
+      clearInputFields(false, true);
+      resetTableListColor();
   }, 10000);
 }
 
 function disableSubmitBtn() {
+  canSubmit = false;
   $('#submitBtn').prop("disabled",true);
 }
 
 function enableSubmitBtn() {
+  canSubmit = true;
   $('#submitBtn').prop("disabled",false);
 }
 
@@ -234,17 +255,99 @@ function sendNotification(message, time) {
 }
 
 function createTable(element, data) {
-  element.append('<table id =' + element.attr('id') + 'Table class = "cityList"><tr><th colspan = "4">' + element.attr('name') + '</th></tr></table>')
-  let table = $('#' + element.attr('id') + 'Table');
-  table.append('<tr><th>' + 'State' + '</th><th>' + 'City' + '</th><th>' + 'State' + '</th><th>' + 'City' + '</th></tr>')
+
+  let table = document.createElement('table');
+  table.id = element.attr('id') + 'Table';
+  table.classList.add('cityList');
+
+  let headRow = document.createElement('tr');
+  let tableHeading = document.createElement('th');
+  tableHeading.colSpan = '4';
+  tableHeading.innerHTML = element.attr('name');
+
+  headRow.append(tableHeading);
+  table.append(headRow);
+
+  let headerRow = document.createElement('tr');
+  for(let i=0; i<2; i++) {
+    let stateHeader = document.createElement('th');
+    stateHeader.innerHTML = 'State';
+    let cityHeader = document.createElement('th');
+    cityHeader.innerHTML = 'City';
+
+    headerRow.append(stateHeader);
+    headerRow.append(cityHeader);
+  }
+
+  table.append(headerRow);
 
   for(let i=0; i<data.length; i+=2) {
     let city1 = data[i];
     let city2 = data[i+1];
     addCityToTable(table, city1, city2);
   };
+
+  element.append(table);
 }
 
 function addCityToTable(table, city1, city2) {
-  table.append('<tr><td>' + city1.state + '</td><td>' + city1.name + '</td></button><td>' + city2.state + '</td><td>' + city2.name + '</td></tr>');
+  let tableRow = document.createElement('tr');
+  generateCityCols(tableRow, city1);
+  generateCityCols(tableRow, city2);
+  table.append(tableRow);
+}
+
+function generateCityCols(parentElement, city) {
+  // remove spaces for the class name
+  let className = city.name.split(' ').join('');
+
+  let stateCol = document.createElement('td');
+  stateCol.classList.add(className);
+  stateCol.innerHTML = city.state;
+  stateCol.addEventListener('click', function() {
+    setGuess(city.name);
+  });
+
+  let cityCol = document.createElement('td');
+  cityCol.classList.add(className);
+  cityCol.innerHTML = city.name;
+  cityCol.addEventListener('click', function() {
+    setGuess(city.name);
+  });
+
+  parentElement.append(stateCol);
+  parentElement.append(cityCol);
+
+}
+
+function setGuess(cityName) {
+  if(canSubmit == false)
+    return;
+  $('#playerGuess').val(cityName);
+  sendData(false);
+}
+
+function setTableListColor(cityName, addColor, win) {
+  let className = cityName.split(' ').join('');
+  let elements = document.getElementsByClassName(className);
+
+  for(let i=0; i<elements.length; i++) {
+    let element = elements[i];
+    if(addColor) {
+      if(win) {
+        element.classList.add('correctGuess');
+      } else {
+        element.classList.add('incorrectGuess');
+      }
+    } else {
+      element.classList.remove('correctGuess');
+      element.classList.remove('incorrectGuess');
+    }
+  }
+}
+
+function resetTableListColor() {
+  currentGuesses.forEach(function(cityName) {
+    setTableListColor(cityName, false, false);
+  });
 }

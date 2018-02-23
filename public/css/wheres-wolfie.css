@@ -28,7 +28,15 @@ body
   transform: translate(-50%, -50%);
 }
 
+.incorrectGuess
+{
+    background-color: darkred;
+}
 
+.correctGuess
+{
+    background-color: green;
+}
 
 #notifications {
     visibility: hidden;

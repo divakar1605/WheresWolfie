@@ -68,14 +68,14 @@ io.on('connection', function(socket){
       socket.broadcast.emit('game over', { 'winnerName' : data.name, 'secretCity' : secretCity });
 
       // send the win message to the winning player only
-      socket.emit('win', {'playerName': data.name, 'pos': secretCity.pos});
+      socket.emit('win', {'playerName': data.name, 'cityName': secretCity.name, 'pos': secretCity.pos});
 
       //prepare to reset the game
       resetGame();
 
     } else if(guessCity !== null){
       let distance = calculateDistance(guessCity);
-      socket.emit('guess response', {'position': guessCity.pos, 'distance': distance});
+      socket.emit('guess response', {'name': guessCity.name, 'position': guessCity.pos, 'distance': distance});
     } else {
       socket.emit('invalid', data.guess);
     }
